@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="avertra.scrolltoenddetector.ScrollToEndDetector" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Scrolled Into View Detector</name>
+    <description>Triggers either 'set a boolean' or 'trigger an event' when the widget's DIV is scrolled into view.</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="debugMode" type="boolean" defaultValue="true">
+                <caption>Debug Mode?</caption>
+                <description>When Active, the widget's DEV will be visible, and the browser's console will display when code is triggered. TURN OFF BEFORE COMMITTING!</description>
+            </property>
+            <property key="setBoolean" type="boolean" defaultValue="false">
+                <caption>Set a Boolean?</caption>
+                <description>Set the attribute when the widget's DIV is scrolled into view? False means the action is triggered.</description>
+            </property>
+            <property key="booleanToSet" type="attribute" required="false">
+                <caption>Boolean to Change</caption>
+                <description>The attribute that will be changed to true when the widget's DIV is scrolled into view.</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="scrolledIntoViewAction" type="action" required="false">
+                <caption>Scrolled Into View Action</caption>
+                <description>Action triggered when the widget's DIV is scrolled into view.</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
