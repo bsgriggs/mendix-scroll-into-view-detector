@@ -1,16 +1,16 @@
 {
   "name": "scrolltoenddetector",
   "widgetName": "ScrollToEndDetector",
-  "version": "1.0.0",
-  "description": "Given an input CSS class, detect when that class is scrolled into view and either set a boolean or trigger an event.",
-  "copyright": "",
+  "version": "2.0.0",
+  "description": "Detect when a section of the page is visiable on the screen",
+  "copyright": "Benjamin Griggs 2023",
   "author": "Benjamin Griggs",
   "config": {
     "projectPath": "../..//",
-    "mendixHost": "http://localhost:8080",
+    "mendixHost": "http://localhost:8082",
     "developmentPort": "3000"
   },
-  "packagePath": "avertra",
+  "packagePath": "mendix",
   "scripts": {
     "start": "pluggable-widgets-tools start:server --open",
     "dev": "pluggable-widgets-tools start:web",
@@ -22,7 +22,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^8.14.0"
+    "@mendix/pluggable-widgets-tools": "^9.18.0"
   },
   "dependencies": {
     "classnames": "^2.2.6"

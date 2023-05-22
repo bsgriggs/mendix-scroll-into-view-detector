@@ -1,15 +1,6 @@
-/*
-Place your custom CSS here
-*/
-.widget-scroll-to-end-detector .debug-mode{
+.scroll-into-view-detector .debug-mode{
     display: block;
     padding: 1rem;
     border: 1px red solid;
     background-color: lightcyan;
-}
-
-.widget-scroll-to-end-detector .debug-mode-off{
-    display: block;
-    padding: 1px; 
-    background-color: transparent;
 }
