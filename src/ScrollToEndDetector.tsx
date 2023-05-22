@@ -1,4 +1,4 @@
-import { ReactElement, createElement, useRef, useEffect, useState } from "react";
+import { ReactElement, createElement, useEffect, useRef, useState } from "react";
 
 import { ScrollToEndDetectorContainerProps } from "../typings/ScrollToEndDetectorProps";
 import { useIsVisible } from "./components/useIsVisible";
@@ -53,8 +53,17 @@ export function ScrollToEndDetector({
                 <span className="debug-mode text-danger">
                     <strong>Scroll Into View Container - DEBUG MODE ACTIVE</strong>
                     <br />
-                    <p>When this container becomes visible, this widget will {mode === "setBoolean"? "set a boolean ": "call an action"}.</p>
-                    <p>This will occur {allowReRun ? "every time the widget is brought in view": "only the first time the widget is brought into view"}.</p>
+                    <p>
+                        When this container becomes visible, this widget will{" "}
+                        {mode === "setBoolean" ? "set a boolean " : "call an action"}.
+                    </p>
+                    <p>
+                        This will occur{" "}
+                        {allowReRun
+                            ? "every time the widget is brought in view"
+                            : "only the first time the widget is brought into view"}
+                        .
+                    </p>
                     <br />
                     <strong>TURN OFF DEBUG MODE BEFORE COMMITTING!</strong>
                 </span>
