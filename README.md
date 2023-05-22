@@ -11,11 +11,10 @@ If you have a very long text, like terms and conditions, and you need a way of 
 Could be used to prevent data on a page from loading until it has been scrolled into view. Do this by having the data view’s visibility disabled by a boolean and having the widget set the boolean blocking the date view to true when scrolled into view.
 
 ## Demo project
-https://scrolltoenddetectorwidget-sandbox.mxapps.io/
+https://widgettesting105-sandbox.mxapps.io/p/scroll-into-view-detector
 
 ## Issues, suggestions and feature requests
 https://github.com/bsgriggs/mendix-scroll-into-view-detector/issues
 
 ## Development and contribution
 Benjamin Griggs
-*useScrollDetector.js code found on stackoverflow, but I cannot find the original post. If you know who wrote it originally, I'd be glad to attribute them here.*

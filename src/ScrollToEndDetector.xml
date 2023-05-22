@@ -3,8 +3,8 @@
         supportedPlatform="Web"
         xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
-    <name>Scroll To End Detector</name>
-    <description>Detect when a section of the page is visiable on the screen</description>
+    <name>Scroll Into View Detector</name>
+    <description>Detect when a section of the page is visible on the screen</description>
     <icon/>
     <properties>
         <propertyGroup caption="General">
