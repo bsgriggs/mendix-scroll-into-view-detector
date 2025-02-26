@@ -1,5 +1,5 @@
 import { ScrollToEndDetectorPreviewProps } from "../typings/ScrollToEndDetectorProps";
-import { hidePropertyIn } from "./components/PageEditorUtils";
+// import { hidePropertyIn } from "@mendix/pluggable-widgets-tools";
 
 export type Platform = "web" | "desktop";
 
@@ -109,31 +109,33 @@ export function getProperties(
     }
     */
 
-    switch (_values.mode) {
-        case "setBoolean":
-            hidePropertyIn(defaultProperties, _values, "scrolledIntoViewAction");
-            break;
-        case "runAction":
-            hidePropertyIn(defaultProperties, _values, "booleanToSet");
-            break;
-    }
+    // switch (_values.mode) {
+    //     case "setBoolean":
+    //         hidePropertyIn(defaultProperties, _values, "scrolledIntoViewAction");
+    //         break;
+    //     case "runAction":
+    //         hidePropertyIn(defaultProperties, _values, "booleanToSet");
+    //         break;
+    // }
     return defaultProperties;
 }
 
-// export function check(_values: ScrollToEndDetectorPreviewProps): Problem[] {
-//     const errors: Problem[] = [];
-//     // Add errors to the above array to throw errors in Studio and Studio Pro.
-//     /* Example
-//     if (values.myProperty !== "custom") {
-//         errors.push({
-//             property: `myProperty`,
-//             message: `The value of 'myProperty' is different of 'custom'.`,
-//             url: "https://github.com/myrepo/mywidget"
-//         });
-//     }
-//     */
-//     return errors;
-// }
+export function check(_values: ScrollToEndDetectorPreviewProps): Problem[] {
+    const errors: Problem[] = [];
+    // Add errors to the above array to throw errors in Studio and Studio Pro.
+    if (
+        _values.booleanToSet === "" &&
+        _values.scrolledIntoViewAction === null &&
+        _values.scrolledOutOfViewAction === null
+    ) {
+        errors.push({
+            property: `booleanToSet`,
+            message: `Either Boolean to Change, Into View Action, or Out of View Action are required.`,
+            url: "https://github.com/bsgriggs/mendix-scroll-into-view-detector/blob/master/README.md"
+        });
+    }
+    return errors;
+}
 
 // export function getPreview(values: ScrollToEndDetectorPreviewProps, isDarkMode: boolean): PreviewProps {
 //     // Customize your pluggable widget appearance for Studio Pro.

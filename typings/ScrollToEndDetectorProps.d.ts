@@ -4,9 +4,8 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
-import { ActionValue, EditableValue } from "mendix";
-
-export type ModeEnum = "setBoolean" | "runAction";
+import { ActionValue, DynamicValue, EditableValue } from "mendix";
+import { Big } from "big.js";
 
 export interface ScrollToEndDetectorContainerProps {
     name: string;
@@ -14,10 +13,11 @@ export interface ScrollToEndDetectorContainerProps {
     style?: CSSProperties;
     tabIndex?: number;
     debugMode: boolean;
-    allowReRun: boolean;
-    mode: ModeEnum;
+    allowReRun: DynamicValue<boolean>;
+    Delay?: DynamicValue<Big>;
     booleanToSet?: EditableValue<boolean>;
     scrolledIntoViewAction?: ActionValue;
+    scrolledOutOfViewAction?: ActionValue;
 }
 
 export interface ScrollToEndDetectorPreviewProps {
@@ -30,8 +30,9 @@ export interface ScrollToEndDetectorPreviewProps {
     styleObject?: CSSProperties;
     readOnly: boolean;
     debugMode: boolean;
-    allowReRun: boolean;
-    mode: ModeEnum;
+    allowReRun: string;
+    Delay: string;
     booleanToSet: string;
     scrolledIntoViewAction: {} | null;
+    scrolledOutOfViewAction: {} | null;
 }

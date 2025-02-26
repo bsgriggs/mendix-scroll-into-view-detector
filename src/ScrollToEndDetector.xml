@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="mendix.scrolltoenddetector.ScrollToEndDetector" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
-        supportedPlatform="Web"
-        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<widget id="mendix.scrolltoenddetector.ScrollToEndDetector" pluginWidget="true"
+    needsEntityContext="true" offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Scroll Into View Detector</name>
     <description>Detect when a section of the page is visible on the screen</description>
-    <icon/>
+    <helpUrl>https://github.com/bsgriggs/mendix-scroll-into-view-detector/blob/master/README.md</helpUrl>
+    <icon />
+
     <properties>
         <propertyGroup caption="General">
-            <property key="debugMode" type="boolean" defaultValue="true">
-                <caption>Debug Mode?</caption>
-                <description>When Active, the widget's DEV will be visible, and the browser's console will display when code is triggered. TURN OFF BEFORE COMMITTING!</description>
-            </property>
-            <property key="allowReRun" type="boolean" defaultValue="false">
-                <caption>Allow re-run</caption>
-                <description></description>
-            </property>
-            <property key="mode" type="enumeration" defaultValue="setBoolean">
-                <caption>Mode</caption>
-                <description>What happens when this element is in view?</description>
-                <enumerationValues>
-                <enumerationValue key="setBoolean">Set boolean</enumerationValue>
-                <enumerationValue key="runAction">Run action</enumerationValue>
-                </enumerationValues>
-            </property>
-            <property key="booleanToSet" type="attribute" required="false">
-                <caption>Boolean to Change</caption>
-                <description>The attribute that will be changed to true when the widget's DIV is scrolled into view.</description>
-                <attributeTypes>
-                    <attributeType name="Boolean"/>
-                </attributeTypes>
-            </property>
-            <property key="scrolledIntoViewAction" type="action" required="false">
-                <caption>Scrolled Into View Action</caption>
-                <description>Action triggered when the widget's DIV is scrolled into view.</description>
-            </property>
+            <propertyGroup caption="General">
+                <property key="debugMode" type="boolean" defaultValue="true">
+                    <caption>Debug Mode?</caption>
+                    <description>When Active, the widget's DEV will be visible, and the browser's console will display when code is triggered. TURN OFF BEFORE COMMITTING!</description>
+                </property>
+                <property key="allowReRun" type="expression" defaultValue="true">
+                    <caption>Allow re-run</caption>
+                    <description></description>
+                    <returnType type="Boolean" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Behavior">
+                <property key="Delay" type="expression" defaultValue="" required="false">
+                    <caption>Delay</caption>
+                    <description>In milliseconds</description>
+                    <returnType type="Integer" />
+                </property>
+                <property key="booleanToSet" type="attribute" required="false">
+                    <caption>Boolean to Change</caption>
+                    <description>Will be changed to true when the widget's DIV is scrolled into view.</description>
+                    <attributeTypes>
+                        <attributeType name="Boolean" />
+                    </attributeTypes>
+                </property>
+                <property key="scrolledIntoViewAction" type="action" required="false">
+                    <caption>Into View Action</caption>
+                    <description>Triggered when the widget's DIV is scrolled into view.</description>
+                </property>
+                <property key="scrolledOutOfViewAction" type="action" required="false">
+                    <caption>Out of View Action</caption>
+                    <description>Triggered when the widget's DIV is scrolled out of view.</description>
+                </property>
+            </propertyGroup>
         </propertyGroup>
     </properties>
 </widget>
